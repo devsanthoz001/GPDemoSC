@@ -44,7 +44,7 @@ public class ContactTests
     public void EnsurePhoneNumberEnteredIsValidForOrderTest()
     {
         // Arrange
-        Order valno= new Order();
+        Order valno = new Order();
         // Act
         valno.Number = 1;
         valno.OrderDate = new DateTime(2023, 08, 28);
@@ -59,8 +59,8 @@ public class ContactTests
             UPINumber = "1234"
         };
         // Assert
-        Assert.Equal("9876543210",validate.PhoneNumber);
-        
+        Assert.Equal("9876543210", validate.PhoneNumber);
+
     }
     [Fact]
     public void CallCustomerWithContactNumberAfterOrderIsPreparedTest()
@@ -69,10 +69,9 @@ public class ContactTests
         Order newCustOrder = new Order() { };
         Contact customerContact = newCustOrder.FindCustomerWithCustomerNo(newCustOrder.CustomerNo);
         //Act
-        bool resultOfCall =customerContact.CallContactWithNumber(customerContact.PhoneNumber);
+        bool resultOfCall = customerContact.CallContactWithNumber(customerContact.PhoneNumber);
         //Assert
         Assert.True(resultOfCall);
     }
-    
 
 }
