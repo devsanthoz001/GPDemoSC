@@ -31,7 +31,7 @@ public class ContactTests
         {
             Number = 1,
             Name = "JKD",
-            PhoneNumber = "1234",
+            PhoneNumber = "9876543210",
             Address = "Somwhere in MH",
             UPINumber = "1234"
         };
@@ -43,11 +43,24 @@ public class ContactTests
     [Fact]
     public void EnsurePhoneNumberEnteredIsValidForOrderTest()
     {
-        // Given
+        // Arrange
+        Order valno= new Order();
+        // Act
+        valno.Number = 1;
+        valno.OrderDate = new DateTime(2023, 08, 28);
+        valno.CustomerNo = 1;
 
-        // When
-
-        // Then
+        Contact validate = new Contact()
+        {
+            Number = 1,
+            Name = "JKD",
+            PhoneNumber = "9876543210",
+            Address = "Somwhere in MH",
+            UPINumber = "1234"
+        };
+        // Assert
+        Assert.Equal("9876543210",validate.PhoneNumber);
+        
     }
     [Fact]
     public void CallCustomerWithContactNumberAfterOrderIsPreparedTest()

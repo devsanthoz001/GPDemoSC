@@ -9,7 +9,7 @@ public class Order {
         Contact newContact = new Contact()
         {
             Number = customerNo,
-            PhoneNumber = "1234"
+            PhoneNumber = "9876543210"
         };
         return newContact;
     }

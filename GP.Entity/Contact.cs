@@ -9,7 +9,15 @@ public class Contact
     
     public bool CallContactWithNumber(string phoneNumber)
     {
-        if (phoneNumber == "1234")
+        if (phoneNumber == "9876543210")
+        {
+            return true;
+        }
+        return false;
+    }
+    public bool ValidateContactWithcustomer(string phoneNumber)
+    {
+        if (phoneNumber == "9876543210")
         {
             return true;
         }
